@@ -1,12 +1,13 @@
 import React from "react";
+import Reviews from "./components/Reviews";
 import "./App.css";
-import Display from "./components/Display";
 
 const App = () => {
   return (
-    <>
-      <Display />
-    </>
+    <div>
+      <h1>Reviews</h1>
+      <Reviews />
+    </div>
   );
 };
 
