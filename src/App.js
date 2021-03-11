@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+
 import "./App.css";
-import Forms from "./components/Forms";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import NaviBar from "./components/NaviBar";
 
 const App = () => {
-  const [a1, setA1] = useState({});
-
   return (
-    <div>
-      <h1>Grocery Bud</h1>
-      <Forms a1={a1} setA1={setA1} />
-    </div>
+    <BrowserRouter>
+      <NaviBar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/AboutUs">
+          <AboutUs />
+        </Route>
+        <Route path="/Contact">
+          <ContactUs />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
